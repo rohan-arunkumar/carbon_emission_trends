@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle 
+import sklearn
 from PIL import Image
 
 # loading in the model to predict on the data
