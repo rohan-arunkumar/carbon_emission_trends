@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 img_url = "carbonbanner.jpg"
-image = Image.open(image_url)
+image = Image.open(img_url)
 st.image(image, caption="Vehicle Pollution")
 st.title("Carbon Emission Trends")
 st.header("Information")
