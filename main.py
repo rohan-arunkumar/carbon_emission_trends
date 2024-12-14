@@ -1,7 +1,5 @@
 import streamlit as st
 import pickle 
-from sklearn.neural_network import MLPRegressor
-from sklearn.metrics import mean_squared_error, r2_score
 from PIL import Image
 
 # loading in the model to predict on the data
