@@ -2,6 +2,15 @@ import streamlit as st
 import pickle 
 from PIL import Image
 
+img_url = "carbonbanner.jpg"
+image = Image.open(img_url)
+st.image(image, caption="Vehicle Pollution")
+st.title("Carbon Emission Trends")
+st.header("Information")
+st.write("""The largest factors for CO2 emissions:
+1. Fuel Type
+2. Engine Size""")
+
 # loading in the model to predict on the data
 pickle_in = open('best_model_MLP_subset1.pkl', 'rb')
 classifier = pickle.load(pickle_in)
@@ -20,12 +29,3 @@ if st.button("Predict"):
     result = prediction(fuel_type, engine_size, cylinders, transmission, fuel_consumption_city, fuel_consumption_hwy, fuel_consumption_combL, fuel_consumption_combG)
     st.success('The output is {}'.format(result))
 
-
-img_url = "carbonbanner.jpg"
-image = Image.open(img_url)
-st.image(image, caption="Vehicle Pollution")
-st.title("Carbon Emission Trends")
-st.header("Information")
-st.write("""The largest factors for CO2 emissions:
-1. Fuel Type
-2. Engine Size""")
