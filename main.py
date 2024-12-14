@@ -3,7 +3,7 @@ import pickle
 from PIL import Image
 
 # loading in the model to predict on the data
-pickle_in = open('best_model_MLP_subset1.pkl', 'rb')
+pickle_in = open('/workspaces/carbon_emission_trends/best_model_MLP_subset1.pkl', 'rb')
 classifier = pickle.load(pickle_in)
 
 fuel_type = st.text_input("Fuel Type", "Type Here")
