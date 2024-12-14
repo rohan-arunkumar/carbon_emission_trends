@@ -11,6 +11,8 @@ st.write("""The largest factors for CO2 emissions:
 1. Fuel Type
 2. Engine Size""")
 
+st.header("Predict Using AI")
+
 # loading in the model to predict on the data
 pickle_in = open('best_model_MLP_subset1.pkl', 'rb')
 classifier = pickle.load(pickle_in)
