@@ -115,8 +115,8 @@ elif section == "Predict":
                 <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
                     <h1 style="color: #ff5733; font-size: 40px;">Your Fuel Economy is: {result:.2f} g/km</h1>
                 </div>
-                <div style="background-color: #ffffff; padding: 10px; border-radius: 5px; text-align: center;">
-                    <h1 style="color: #ff5733; font-size: 35px;">Classification: {classification} </h1>
+                <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #ffffff; font-size: 35px;">Classification: {classification} </h1>
                 </div>
                 """,
                 unsafe_allow_html=True,
