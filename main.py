@@ -100,5 +100,13 @@ elif section == "Predict":
             output = process_car_input(user_input)
             result = classifier.predict(output)
             result = result[0]
-            st.write(f'The amount of CO2 (g/km) released into the air is:')
-            st.subheader(result)
+            st.markdown(
+                f"""
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #ff5733; font-size: 40px;">Your Fuel Economy is: {result:.2f} mpg</h1>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            # st.write(f'The amount of CO2 (g/km) released into the air is:')
+            # st.subheader(result)
