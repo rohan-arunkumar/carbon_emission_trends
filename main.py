@@ -17,14 +17,14 @@ st.header("Predict Using AI")
 pickle_in = open('best_model_MLP_subset1.pkl', 'rb')
 classifier = pickle.load(pickle_in)
 
-fuel_type = st.text_input("Fuel Type", "Type Here")
-engine_size = st.text_input("Engine Size", "Type Here")
-cylinders = st.text_input("Cylinders", "Type Here")
-transmission = st.text_input("Transmission", "Type Here")
-fuel_consumption_city = st.text_input("Fuel Consumption City (L/100 km)", "Type Here")
-fuel_consumption_hwy = st.text_input("Fuel Consumption Hwy (L/100 km)", "Type Here")
-fuel_consumption_combL = st.text_input("Fuel Consumption Comb (L/100 km)", "Type Here")
-fuel_consumption_combG = st.text_input("Fuel Consumption Comb (mpg)", "Type Here")
+fuel_type = st.text_input("Fuel Type")
+engine_size = st.text_input("Engine Size")
+cylinders = st.text_input("Cylinders")
+transmission = st.text_input("Transmission")
+fuel_consumption_city = st.text_input("Fuel Consumption City (L/100 km)")
+fuel_consumption_hwy = st.text_input("Fuel Consumption Hwy (L/100 km)")
+fuel_consumption_combL = st.text_input("Fuel Consumption Comb (L/100 km)")
+fuel_consumption_combG = st.text_input("Fuel Consumption Comb (mpg)")
 
 input_columns = [
     'Engine Size(L)', 'Cylinders', 'Fuel Consumption City (L/100 km)',
