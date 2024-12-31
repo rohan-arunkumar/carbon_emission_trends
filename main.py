@@ -100,10 +100,28 @@ elif section == "Predict":
             output = process_car_input(user_input)
             result = classifier.predict(output)
             result = result[0]
+            if result < 199:
+                classification = 'Very Low'
+            elif 199 <= result < 230:
+                classification = 'Low'
+            elif 230 <= result < 260:
+                classification = 'Medium'
+            elif 260 <= result < 298:
+                classification = 'High'
+            else:
+                classification = 'Very High'
             st.markdown(
                 f"""
                 <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
                     <h1 style="color: #ff5733; font-size: 40px;">Your Fuel Economy is: {result:.2f} g/km</h1>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            st.markdown(
+                f"""
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #ff5733; font-size: 40px;">Classification: {classification} g/km</h1>
                 </div>
                 """,
                 unsafe_allow_html=True,
