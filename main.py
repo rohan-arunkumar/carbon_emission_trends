@@ -36,9 +36,11 @@ elif section == "Predict":
             'AS9', 'AV', 'AV10', 'AV6', 'AV7', 'AV8', 'M5', 'M6', 'M7'
         ]
         fuel_type = st.selectbox("Fuel Type", fuel_type_options)
+        st.caption("Fuel Type meanings: D = Diesel, E = Ethanol, X = Regular Gasoline, Z = Premium Gasoline")
         engine_size = st.text_input("Engine Size")
         cylinders = st.text_input("Cylinders")
         transmission = st.selectbox("Transmission", transmission_options)
+        st.caption("Transmission meanings: A = Automatic, AM = Automated Manual, AS = Automatic w/ Select Shift, AV = Cotinuously Variable, 3-10 = Number of Gears ")
         fuel_consumption_city = st.text_input("Fuel Consumption City (L/100 km)")
         fuel_consumption_hwy = st.text_input("Fuel Consumption Hwy (L/100 km)")
         fuel_consumption_combL = st.text_input("Fuel Consumption Comb (L/100 km)")
