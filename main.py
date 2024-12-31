@@ -121,7 +121,7 @@ elif section == "Predict":
             st.markdown(
                 f"""
                 <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
-                    <h1 style="color: #ff5733; font-size: 40px;">Classification: {classification} g/km</h1>
+                    <h1 style="color: #ff5733; font-size: 40px;">Classification: {classification} </h1>
                 </div>
                 """,
                 unsafe_allow_html=True,
