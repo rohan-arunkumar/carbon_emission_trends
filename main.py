@@ -26,6 +26,8 @@ fuel_consumption_hwy = st.text_input("Fuel Consumption Hwy (L/100 km)")
 fuel_consumption_combL = st.text_input("Fuel Consumption Comb (L/100 km)")
 fuel_consumption_combG = st.text_input("Fuel Consumption Comb (mpg)")
 
+
+
 input_columns = [
     'Engine Size(L)', 'Cylinders', 'Fuel Consumption City (L/100 km)',
     'Fuel Consumption Hwy (L/100 km)', 'Fuel Consumption Comb (L/100 km)',
@@ -65,8 +67,8 @@ def process_car_input(user_input):
             fuel_type_column = f"Fuel Type_{value}"
             if fuel_type_column in input_columns:
                 output_list[input_columns.index(fuel_type_column)] = 1
-
-    return output_list
+    output_list = list(map(float, output_list))
+    return [output_list]
 
 # Example usage
 user_input = {
@@ -81,7 +83,7 @@ user_input = {
 }
 
 output = process_car_input(user_input)
-output = [output]
+
 print(output)
 
 
