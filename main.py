@@ -99,4 +99,4 @@ elif section == "Predict":
 
             output = process_car_input(user_input)
             result = classifier.predict(output)
-            st.success(f'The output is {result}')
+            st.success(f'The amount of CO2 (g/km) released into the air is {result}')
