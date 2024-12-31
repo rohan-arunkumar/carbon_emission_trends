@@ -81,6 +81,7 @@ user_input = {
 }
 
 output = process_car_input(user_input)
+output = [output]
 print(output)
 
 
