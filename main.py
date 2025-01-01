@@ -11,10 +11,10 @@ st.sidebar.title("Navigation")
 section = st.sidebar.radio("Go to", ["Home", "Information", "Predict"])
 
 if section == "Home":
+    st.title("Carbon Emission Trends")
     img_url = "carbonbanner.jpg"
     image = Image.open(img_url)
     st.image(image, caption="Vehicle Pollution")
-    st.title("Carbon Emission Trends")
     st.header("About the Project")
 
 elif section == "Information":
