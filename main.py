@@ -8,20 +8,25 @@ classifier = pickle.load(pickle_in)
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
-section = st.sidebar.radio("Go to", ["About", "Predict"])
+section = st.sidebar.radio("Go to", ["Home", "Information", "Predict"])
 
-if section == "About":
-    # About Section
+if section == "Home":
     img_url = "carbonbanner.jpg"
     image = Image.open(img_url)
     st.image(image, caption="Vehicle Pollution")
     st.title("Carbon Emission Trends")
-    st.header("Information")
+    st.header("About the Project")
+
+elif section == "Information":
+    # About Section
+    st.title("Information")
+    st.header("Factors")
     st.write("""
     The largest factors for CO2 emissions:
     1. Fuel Type
     2. Engine Size
     """)
+    st.header("Car Brands in Relation to Emissions")
 
 elif section == "Predict":
     # Prediction Section
