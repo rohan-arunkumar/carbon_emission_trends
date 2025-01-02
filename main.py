@@ -16,6 +16,7 @@ if section == "Home":
     image = Image.open(img_url)
     st.image(image, caption="Vehicle Pollution")
     st.header("About the Project")
+    st.write("One of the biggest contributers to Global Warming is the emission of greenhouse Gas, which have already tore a hole in the Earth's ozone layer, exposing us to harmful radiation and speeding up the climate clock. Surprisingly, transport accounts for around a quarter of global carbon emissions, wherein vehicles supply three quarters (18.75 percent of total).")
 
 elif section == "Information":
     # About Section
