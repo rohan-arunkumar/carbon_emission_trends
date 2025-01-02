@@ -47,9 +47,9 @@ elif section == "Predict":
         transmission = st.selectbox("Transmission Type", transmission_options)
         st.write("<small><i>A = Automatic, AM = Automated Manual, AS = Automatic w/ Select Shift, AV = Cotinuously Variable, 3-10 = Number of Gears", unsafe_allow_html=True)
         fuel_consumption_city = st.text_input("Fuel Consumption City (L/100 km)")
-        fuel_consumption_hwy = st.text_input("Fuel Consumption Hwy (L/100 km)")
-        fuel_consumption_combL = st.text_input("Fuel Consumption Comb (L/100 km)")
-        fuel_consumption_combG = st.text_input("Fuel Consumption Comb (mpg)")
+        fuel_consumption_hwy = st.text_input("Fuel Consumption Highway (L/100 km)")
+        fuel_consumption_combL = st.text_input("Fuel Consumption Combined (L/100 km)")
+        fuel_consumption_combG = st.text_input("Fuel Consumption Combined (mpg)")
 
         # Submit button for the form
         submit_button = st.form_submit_button(label="Predict")
