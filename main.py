@@ -42,9 +42,9 @@ elif section == "Predict":
         ]
         fuel_type = st.selectbox("Fuel Type", fuel_type_options)
         st.write("<small><i>D = Diesel, E = Ethanol, X = Regular Gasoline, Z = Premium Gasoline", unsafe_allow_html=True)
-        engine_size = st.text_input("Engine Size")
-        cylinders = st.text_input("Cylinders")
-        transmission = st.selectbox("Transmission", transmission_options)
+        engine_size = st.text_input("Engine Size (L)")
+        cylinders = st.text_input("Number of Cylinders")
+        transmission = st.selectbox("Transmission Type", transmission_options)
         st.write("<small><i>A = Automatic, AM = Automated Manual, AS = Automatic w/ Select Shift, AV = Cotinuously Variable, 3-10 = Number of Gears", unsafe_allow_html=True)
         fuel_consumption_city = st.text_input("Fuel Consumption City (L/100 km)")
         fuel_consumption_hwy = st.text_input("Fuel Consumption Hwy (L/100 km)")
