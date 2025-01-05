@@ -30,11 +30,30 @@ elif section == "Feature Engineering":
     
     st.markdown("""
     ### 🚀 Top Factors Driving CO2 Emissions:
-    1. **Fuel Type** 🛢️: Determines the combustion process and emissions output.
-    2. **Engine Size** ⚙️: Larger engines typically release higher emissions.
-    3. **Vehicle Weight** 🚛: Heavier cars consume more fuel and emit more CO2.
-    4. **Aerodynamics** 🌬️: Poor design increases fuel consumption.
-    5. **Driving Habits** 🚦: Aggressive driving leads to higher emissions.
+    1. **Fuel Type** 🛢️:
+       a. Ethanol  
+       b. Diesel  
+       c. Gasoline  
+       d. Compressed Natural Gas (CNG)  
+
+    2. **Engine Size** ⚙️:
+       a. Small Engines (<1.5L)  
+       b. Mid-Size Engines (1.5L-3.0L)  
+       c. Large Engines (>3.0L)  
+
+    3. **Vehicle Weight** 🚛:
+       a. Lightweight (<2,500 lbs)  
+       b. Medium Weight (2,500-4,000 lbs)  
+       c. Heavyweight (>4,000 lbs)  
+
+    4. **Aerodynamics** 🌬️:
+       a. Streamlined Designs  
+       b. High-Drag Designs  
+
+    5. **Driving Habits** 🚦:
+       a. Aggressive Acceleration  
+       b. Frequent Braking  
+       c. Idle Time  
     """)
     
     # Add a Visual Element
