@@ -24,7 +24,7 @@ elif section == "Feature Engineering":
     # About Section
     st.title("Feature Engineering")
     st.header("Factors Most Related to Carbon Emissions")
-    st.write("<small><i>(as predicted by model)", unsafe_allow_html=True)
+    st.subheader("(as predicted by model)")
     st.write("""
     The largest factors for CO2 emissions:
     1. Fuel Type
