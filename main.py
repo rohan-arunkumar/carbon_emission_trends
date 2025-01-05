@@ -23,13 +23,14 @@ if section == "Home":
 elif section == "Feature Engineering":
     # About Section
     st.title("Feature Engineering")
-    st.header("Factors Most Related to Carbon Emissions (as predicted by model)")
+    st.header("Factors Most Related to Carbon Emissions")
+    st.write("<small><i>(as predicted by model)", unsafe_allow_html=True)
     st.write("""
     The largest factors for CO2 emissions:
     1. Fuel Type
     2. Engine Size
     """)
-    st.header("Car Brands in Relation to Emissions")
+    st.header("Car Brands and Models in Relation to Emissions")
 
 elif section == "Predict":
     # Prediction Section
