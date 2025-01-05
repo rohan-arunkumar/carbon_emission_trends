@@ -30,27 +30,27 @@ elif section == "Feature Engineering":
     
     st.markdown("""
     ### 🚀 Top Factors Driving CO2 Emissions:
-    1. **Fuel Type** 🛢️:
+    1. **Fuel Type**:
        - a. Ethanol  
        - b. Diesel  
        - c. Gasoline  
        - d. Compressed Natural Gas (CNG)  
 
-    2. **Engine Size** ⚙️:
+    2. **Engine Size**:
        - a. Small Engines (<1.5L)  
        - b. Mid-Size Engines (1.5L-3.0L)  
        - c. Large Engines (>3.0L)  
 
-    3. **Vehicle Weight** 🚛:
+    3. **Vehicle Weight**:
        - a. Lightweight (<2,500 lbs)  
        - b. Medium Weight (2,500-4,000 lbs)  
        - c. Heavyweight (>4,000 lbs)  
 
-    4. **Aerodynamics** 🌬️:
+    4. **Aerodynamics**:
        - a. Streamlined Designs  
        - b. High-Drag Designs  
 
-    5. **Driving Habits** 🚦:
+    5. **Driving Habits**:
        - a. Aggressive Acceleration  
        - b. Frequent Braking  
        - c. Idle Time  
