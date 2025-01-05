@@ -22,15 +22,29 @@ if section == "Home":
 
 elif section == "Feature Engineering":
     # About Section
-    st.title("Feature Engineering")
-    st.header("Factors Most Related to Carbon Emissions")
-    st.subheader("(as predicted by model)")
-    st.write("""
-    The largest factors for CO2 emissions:
-    1. Fuel Type
-    2. Engine Size
+    st.title("🌟 Feature Engineering: Key Insights on CO2 Emissions")
+    
+    # Highlight Factors Related to Emissions
+    st.header("📊 Factors Most Related to Carbon Emissions")
+    st.subheader("(Predicted by Our Model)")
+    
+    st.markdown("""
+    ### 🚀 Top Factors Driving CO2 Emissions:
+    1. **Fuel Type** 🛢️: Determines the combustion process and emissions output.
+    2. **Engine Size** ⚙️: Larger engines typically release higher emissions.
+    3. **Vehicle Weight** 🚛: Heavier cars consume more fuel and emit more CO2.
+    4. **Aerodynamics** 🌬️: Poor design increases fuel consumption.
+    5. **Driving Habits** 🚦: Aggressive driving leads to higher emissions.
     """)
-    st.header("Car Brands and Models in Relation to Emissions")
+    
+    # Add a Visual Element
+    st.image("path_to_relevant_image.jpg", caption="Factors influencing CO2 emissions", use_column_width=True)
+    
+    # Concluding Message
+    st.markdown("""
+    Understanding these factors helps us identify key areas to target for reducing carbon emissions. Together, we can make driving more eco-friendly! 🌍
+    """)
+
 
 elif section == "Predict":
     # Prediction Section
