@@ -26,7 +26,7 @@ elif section == "Feature Engineering":
     
     # Highlight Factors Related to Emissions
     st.header("Factors Most Related to Carbon Emissions")
-    st.write("(Predicted by Our Model, Rounded to Nearest Int)")
+    st.write("(Predicted by Our Model, Rounded to Nearest Integer)")
     
     st.markdown("""
     ### 🚀 Top Factors Driving CO2 Emissions:
@@ -34,16 +34,13 @@ elif section == "Feature Engineering":
        - a. City (40% of total importance)
        - b. Combined (21% of total importance)  
        - c. Highway (15% of total importance)
-
     2. **Fuel Type**:
        - a. Ethanol (15% of total importance)  
        - b. Regular Gasoline (3% of total importance)  
        - c. Premium Gasoline (3% of total importance)
        - d. Diesel (2% of total importance)  
-       
     3. **Cylinders**:
        - a. Number of Cylinders (0.05% importance)
-
     4. **Transmission**:
        - a. AS8 (0.1% of total importance) 
        - b. M6 (0.09% of total importance)
