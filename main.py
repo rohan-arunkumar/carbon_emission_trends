@@ -45,13 +45,13 @@ elif section == "Feature Engineering":
        - a. Number of Cylinders (0.05% importance)
 
     4. **Transmission**:
-       - a. AS8 (0.1) 
-       - b. M6 (0.09)
-       - c. AM7 (0.08) 
-       - d. AS6 (0.05)
-       - e. A8, A9 (0.04)
-       - f. AS10, A6, AV, AS7 (0.02)
-       - g. ALL OTHERS ARE NEGLIGABLE
+       - a. AS8 (0.1% of total importance) 
+       - b. M6 (0.09% of total importance)
+       - c. AM7 (0.08% of total importance) 
+       - d. AS6 (0.05% of total importance)
+       - e. A8, A9 (0.04% of total importance)
+       - f. AS10, A6, AV, AS7 (0.02% of total importance)
+       - g. ALL OTHER TRANSMISSIONS ARE NEGLIGABLE (<0.01% of total importance)
     """)
     
     # Add a Visual Element
