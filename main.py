@@ -67,7 +67,7 @@ elif section == "Feature Engineering":
 
 elif section == "Predict":
     # Prediction Section
-    st.title("Predict Using AI")
+    st.title("Predict YOUR Emissions Using AI!")
 
     # Using a form to group inputs
     with st.form(key="prediction_form"):
