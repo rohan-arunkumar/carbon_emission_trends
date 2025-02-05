@@ -22,10 +22,10 @@ if section == "Home":
 
 elif section == "Feature Engineering":
     # About Section
-    st.title("🌟 Feature Engineering: Key Insights on CO2 Emissions")
+    st.title("Feature Engineering: Key Insights on CO2 Emissions")
     
     # Highlight Factors Related to Emissions
-    st.header("📊 Factors Most Related to Carbon Emissions")
+    st.header("Factors Most Related to Carbon Emissions")
     st.subheader("(Predicted by Our Model, Rounded to Nearest Int)")
     
     st.markdown("""
