@@ -26,7 +26,7 @@ elif section == "Feature Engineering":
     
     # Highlight Factors Related to Emissions
     st.header("Factors Most Related to Carbon Emissions")
-    st.subheader("(Predicted by Our Model, Rounded to Nearest Int)")
+    st.write("(Predicted by Our Model, Rounded to Nearest Int)")
     
     st.markdown("""
     ### 🚀 Top Factors Driving CO2 Emissions:
