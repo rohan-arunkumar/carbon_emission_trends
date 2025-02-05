@@ -49,6 +49,7 @@ elif section == "Feature Engineering":
        - e. A8, A9 (0.04% of total importance)
        - f. AS10, A6, AV, AS7 (0.02% of total importance)
        - g. ALL OTHER TRANSMISSIONS ARE NEGLIGABLE (<0.01% of total importance)
+    5. **Image**:
     """)
     
     # Add a Visual Element
