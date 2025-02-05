@@ -52,7 +52,7 @@ elif section == "Feature Engineering":
     """)
     
     # Add a Visual Element
-    st.image("path_to_relevant_image.jpg", caption="Factors influencing CO2 emissions", use_container_width=True)
+    st.image("featureimportance.png", caption="Factors influencing CO2 emissions", use_container_width=True)
     
     # Concluding Message
     st.markdown("""
