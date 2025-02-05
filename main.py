@@ -26,34 +26,32 @@ elif section == "Feature Engineering":
     
     # Highlight Factors Related to Emissions
     st.header("📊 Factors Most Related to Carbon Emissions")
-    st.subheader("(Predicted by Our Model)")
+    st.subheader("(Predicted by Our Model, Rounded to Nearest Int)")
     
     st.markdown("""
     ### 🚀 Top Factors Driving CO2 Emissions:
-    1. **Fuel Type**:
-       - a. Ethanol  
-       - b. Diesel  
-       - c. Gasoline  
-       - d. Compressed Natural Gas (CNG)  
+    1. **Fuel Consumption**:
+       - a. City (40% of total importance)
+       - b. Combined (21% of total importance)  
+       - c. Highway (15% of total importance)
 
-    2. **Engine Size**:
-       - a. Small Engines (<1.5L)  
-       - b. Mid-Size Engines (1.5L-3.0L)  
-       - c. Large Engines (>3.0L)  
+    2. **Fuel Type**:
+       - a. Ethanol (15% of total importance)  
+       - b. Regular Gasoline (3% of total importance)  
+       - c. Premium Gasoline (3% of total importance)
+       - d. Diesel (2% of total importance)  
+       
+    3. **Cylinders**:
+       - a. Number of Cylinders (0.05% importance)
 
-    3. **Vehicle Weight**:
-       - a. Lightweight (<2,500 lbs)  
-       - b. Medium Weight (2,500-4,000 lbs)  
-       - c. Heavyweight (>4,000 lbs)  
-
-    4. **Aerodynamics**:
-       - a. Streamlined Designs  
-       - b. High-Drag Designs  
-
-    5. **Driving Habits**:
-       - a. Aggressive Acceleration  
-       - b. Frequent Braking  
-       - c. Idle Time  
+    4. **Transmission**:
+       - a. AS8 (0.1) 
+       - b. M6 (0.09)
+       - c. AM7 (0.08) 
+       - d. AS6 (0.05)
+       - e. A8, A9 (0.04)
+       - f. AS10, A6, AV, AS7 (0.02)
+       - g. ALL OTHERS ARE NEGLIGABLE
     """)
     
     # Add a Visual Element
