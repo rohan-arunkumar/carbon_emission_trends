@@ -57,7 +57,11 @@ elif section == "Feature Engineering":
     
     # Concluding Message
     st.markdown("""
-    Understanding these factors helps us identify key areas to target for reducing carbon emissions. Together, we can make driving more eco-friendly! 🌍
+    Understanding these factors helps us identify key areas to target for reducing carbon emissions. 
+    The factor that most overwhelmingly leads to CO2 emissions is of course fuel consuption, but beyond that, 
+    ethanol fuel seems to have a very large impact on emissions (12%). Ethanol is tailed by the other fuel types, 
+    which have a lower impact on the total CO2 emissions (2-3%). Suprisingly, cylinders and transmission don't make
+    very large impacts, but they are still relevant given the high number of CO2 emissions (g/km). Together, we can make driving more eco-friendly! 🌍
     """)
 
 
