@@ -152,15 +152,59 @@ elif section == "Predict":
             result = result[0]
             if result < 199:
                 classification = 'Very Low'
+                st.markdown(
+                f"""
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #ff5733; font-size: 40px;">Your Fuel Economy is: {result:.2f} g/km</h1>
+                </div>
+                <div style="background-color: #AFEA2E; padding: 10px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #000000; font-size: 35px;">Classification: {classification} </h1>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
             elif 199 <= result < 230:
                 classification = 'Low'
+                st.markdown(
+                f"""
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #ff5733; font-size: 40px;">Your Fuel Economy is: {result:.2f} g/km</h1>
+                </div>
+                <div style="background-color: #C5E42B; padding: 10px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #000000; font-size: 35px;">Classification: {classification} </h1>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
             elif 230 <= result < 260:
                 classification = 'Medium'
+                st.markdown(
+                f"""
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #ff5733; font-size: 40px;">Your Fuel Economy is: {result:.2f} g/km</h1>
+                </div>
+                <div style="background-color: #F0F811; padding: 10px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #000000; font-size: 35px;">Classification: {classification} </h1>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
             elif 260 <= result < 298:
                 classification = 'High'
+                st.markdown(
+                f"""
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #ff5733; font-size: 40px;">Your Fuel Economy is: {result:.2f} g/km</h1>
+                </div>
+                <div style="background-color: ##F86911; padding: 10px; border-radius: 5px; text-align: center;">
+                    <h1 style="color: #000000; font-size: 35px;">Classification: {classification} </h1>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
             else:
                 classification = 'Very High'
-            st.markdown(
+                st.markdown(
                 f"""
                 <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center;">
                     <h1 style="color: #ff5733; font-size: 40px;">Your Fuel Economy is: {result:.2f} g/km</h1>
@@ -171,5 +215,6 @@ elif section == "Predict":
                 """,
                 unsafe_allow_html=True,
             )
+            
             # st.write(f'The amount of CO2 (g/km) released into the air is:')
             # st.subheader(result)
