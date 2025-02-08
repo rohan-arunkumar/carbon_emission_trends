@@ -80,13 +80,13 @@ elif section == "Predict":
         fuel_type = st.selectbox("Fuel Type", fuel_type_options)
         st.write("<small><i>D = Diesel, E = Ethanol, X = Regular Gasoline, Z = Premium Gasoline", unsafe_allow_html=True)
         engine_size = st.slider("Engine Size (L)", 0.0, 10.0, 0.1)      #text_input("Engine Size (L)")
-        cylinders = st.text_input("Number of Cylinders")
+        cylinders = st.slider("Number of Cylinders", 4, 12, 1) 
         transmission = st.selectbox("Transmission Type", transmission_options)
         st.write("<small><i>A = Automatic, AM = Automated Manual, AS = Automatic w/ Select Shift, AV = Cotinuously Variable, 3-10 = Number of Gears", unsafe_allow_html=True)
-        fuel_consumption_city = st.text_input("Fuel Consumption City (L/100 km)")
-        fuel_consumption_hwy = st.text_input("Fuel Consumption Highway (L/100 km)")
-        fuel_consumption_combL = st.text_input("Fuel Consumption Combined (L/100 km)")
-        fuel_consumption_combG = st.text_input("Fuel Consumption Combined (mpg)")
+        fuel_consumption_city = st.slider("Fuel Consumption City (L/100 km)", 0.0, 40.0, 0.1)
+        fuel_consumption_hwy = st.slider("Fuel Consumption Highway (L/100 km)", 0.0, 40.0, 0.1)
+        fuel_consumption_combL = st.slider("Fuel Consumption Combined (L/100 km)", 0.0, 40.0, 0.1)
+        fuel_consumption_combG = st.slider("Fuel Consumption Combined (mpg)", 0.0, 80.0, 0.1)
 
         # Submit button for the form
         submit_button = st.form_submit_button(label="Predict")
