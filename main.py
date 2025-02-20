@@ -1,14 +1,22 @@
 import streamlit as st
 import pickle
+import pandas as pd
 from PIL import Image
 
 # Load the model
 pickle_in = open('best_model_MLP_subset1.pkl', 'rb')
 classifier = pickle.load(pickle_in)
 
+file_path = "/workspaces/carbon_emission_trends/2025 FE Guide for DOE-release dates before 12-1-2024-no-sales -12-1-2024_r1public.xlsx"
+df = pd.read_excel(file_path, sheet_name="2025")
+
+# Filter necessary columns
+columns_needed = ["Mfr Name", "Model", "CO2 Rating (g/mi) City", "CO2 Rating (g/mi) Hwy", "CO2 Rating (g/mi) Comb"]
+df = df[columns_needed].dropna()
+
 # Sidebar for navigation
 st.sidebar.title("Navigation")
-section = st.sidebar.radio("Go to", ["Home", "Feature Engineering", "Predict"])
+section = st.sidebar.radio("Go to", ["Home", "Feature Engineering", "Predict", "CO2 Emission Lookup"])
 
 if section == "Home":
     st.title("Carbon Emission Trends")
@@ -218,3 +226,21 @@ elif section == "Predict":
             
             # st.write(f'The amount of CO2 (g/km) released into the air is:')
             # st.subheader(result)
+elif section == "CO2 Emission Lookup":
+    st.header("Search for CO2 Emission Ratings")
+        
+    # Select manufacturer and model
+    manufacturer = st.selectbox("Select Manufacturer", sorted(df["Mfr Name"].unique()))
+    models = df[df["Mfr Name"] == manufacturer]["Model"].unique()
+    model = st.selectbox("Select Model", sorted(models))
+        
+    # Display CO2 ratings
+    result = df[(df["Mfr Name"] == manufacturer) & (df["Model"] == model)]
+        
+    if not result.empty:
+        st.subheader("CO2 Emission Ratings (g/mi)")
+        st.write(f"**City:** {result.iloc[0]['CO2 Rating (g/mi) City']}")
+        st.write(f"**Highway:** {result.iloc[0]['CO2 Rating (g/mi) Hwy']}")
+        st.write(f"**Combined:** {result.iloc[0]['CO2 Rating (g/mi) Comb']}")
+    else:
+        st.warning("No data found for the selected vehicle.")
