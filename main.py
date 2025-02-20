@@ -7,7 +7,7 @@ from PIL import Image
 pickle_in = open('best_model_MLP_subset1.pkl', 'rb')
 classifier = pickle.load(pickle_in)
 
-file_path = "/workspaces/carbon_emission_trends/2025 FE Guide for DOE-release dates before 12-1-2024-no-sales -12-1-2024_r1public.xlsx"
+file_path = "2025 FE Guide for DOE-release dates before 12-1-2024-no-sales -12-1-2024_r1public.xlsx"
 df = pd.read_excel(file_path, sheet_name="2025")
 
 # Filter necessary columns
