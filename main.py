@@ -42,7 +42,7 @@ def emission_search():
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
-section = st.sidebar.radio("Go to", ["Home", "Feature Engineering", "Predict", "CO2 Emission Lookup"])
+section = st.sidebar.radio("Go to", ["Home", "Feature Engineering", "Predict", "CO2 Emission by Car Brand"])
 
 if section == "Home":
     st.title("Carbon Emission Trends")
@@ -252,5 +252,5 @@ elif section == "Predict":
             
             # st.write(f'The amount of CO2 (g/km) released into the air is:')
             # st.subheader(result)
-elif section == "CO2 Emission Lookup":
+elif section == "CO2 Emission by Car Brand":
     emission_search()
