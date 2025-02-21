@@ -7,12 +7,37 @@ from PIL import Image
 pickle_in = open('best_model_MLP_subset1.pkl', 'rb')
 classifier = pickle.load(pickle_in)
 
-file_path = "2025 FE Guide for DOE-release dates before 12-1-2024-no-sales -12-1-2024_r1public.xlsx"
-df = pd.read_excel(file_path, sheet_name="2025")
+@st.cache_data
+def load_data():
+    file_path = "2025cardata.xlsx"  # Ensure this is the correct path
+    xls = pd.ExcelFile(file_path)
+    df_2025 = pd.read_excel(xls, sheet_name="2025")
+    return df_2025
 
-# Filter necessary columns
-columns_needed = ["Mfr Name", "Model", "CO2 Rating (g/mi) City", "CO2 Rating (g/mi) Hwy", "CO2 Rating (g/mi) Comb"]
-df = df[columns_needed].dropna()
+df = load_data()
+
+def emission_search():
+    st.title("Search CO2 Emission Ratings")
+    
+    # Select a car brand
+    brands = df['Division'].unique()
+    selected_brand = st.selectbox("Select Brand", brands)
+    
+    # Filter car models based on brand
+    car_models = df[df['Division'] == selected_brand]['Carline'].unique()
+    selected_model = st.selectbox("Select Car Model", car_models)
+    
+    # Retrieve and display emission data
+    filtered_df = df[(df['Division'] == selected_brand) & (df['Carline'] == selected_model)]
+    
+    if not filtered_df.empty:
+        st.write("### CO2 Emission Ratings")
+        st.write(f"**City CO2 Emissions:** {filtered_df['City CO2 Rounded Adjusted'].values[0]} g/mile")
+        st.write(f"**Highway CO2 Emissions:** {filtered_df['Hwy CO2 Rounded Adjusted'].values[0]} g/mile")
+        st.write(f"**Combined CO2 Emissions:** {filtered_df['Comb CO2 Rounded Adjusted (as shown on FE Label)'].values[0]} g/mile")
+    else:
+        st.write("No data available for the selected car.")
+
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
@@ -227,20 +252,4 @@ elif section == "Predict":
             # st.write(f'The amount of CO2 (g/km) released into the air is:')
             # st.subheader(result)
 elif section == "CO2 Emission Lookup":
-    st.header("Search for CO2 Emission Ratings")
-        
-    # Select manufacturer and model
-    manufacturer = st.selectbox("Select Manufacturer", sorted(df["Mfr Name"].unique()))
-    models = df[df["Mfr Name"] == manufacturer]["Model"].unique()
-    model = st.selectbox("Select Model", sorted(models))
-        
-    # Display CO2 ratings
-    result = df[(df["Mfr Name"] == manufacturer) & (df["Model"] == model)]
-        
-    if not result.empty:
-        st.subheader("CO2 Emission Ratings (g/mi)")
-        st.write(f"**City:** {result.iloc[0]['CO2 Rating (g/mi) City']}")
-        st.write(f"**Highway:** {result.iloc[0]['CO2 Rating (g/mi) Hwy']}")
-        st.write(f"**Combined:** {result.iloc[0]['CO2 Rating (g/mi) Comb']}")
-    else:
-        st.warning("No data found for the selected vehicle.")
+    emission_search()
