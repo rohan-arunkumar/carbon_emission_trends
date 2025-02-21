@@ -11,7 +11,7 @@ classifier = pickle.load(pickle_in)
 @st.cache_data
 def load_data():
     file_path = "2025cardata.xlsx"  # Ensure this is the correct path
-    xls = pd.ExcelFile(file_path)
+    xls = pd.ExcelFile(file_path, engine="openpyxl")
     df_2025 = pd.read_excel(xls, sheet_name="2025")
     return df_2025
 
