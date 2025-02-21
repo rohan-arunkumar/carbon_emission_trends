@@ -1,7 +1,9 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import openpyxl
 from PIL import Image
+
 
 # Load the model
 pickle_in = open('best_model_MLP_subset1.pkl', 'rb')
