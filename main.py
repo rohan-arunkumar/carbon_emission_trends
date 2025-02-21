@@ -1,7 +1,6 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import openpyxl
 from PIL import Image
 
 
