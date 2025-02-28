@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+from scipy.stats import percentileofscore
 from PIL import Image
 
 
@@ -16,6 +17,36 @@ def load_data():
     return df_2025
 
 df = load_data()
+
+df['City CO2 Percentile'] = df['City CO2 Rounded Adjusted'].apply(lambda x: percentileofscore(df['City CO2 Rounded Adjusted'], x))
+df['Hwy CO2 Percentile'] = df['Hwy CO2 Rounded Adjusted'].apply(lambda x: percentileofscore(df['Hwy CO2 Rounded Adjusted'], x))
+df['Comb CO2 Percentile'] = df['Comb CO2 Rounded Adjusted (as shown on FE Label)'].apply(lambda x: percentileofscore(df['Comb CO2 Rounded Adjusted (as shown on FE Label)'], x))
+
+def get_color(percentile):
+    if percentile <= 25:
+        return "green"
+    elif percentile <= 50:
+        return "yellowgreen"
+    elif percentile <= 75:
+        return "orange"
+    else:
+        return "red"
+    
+def display_emission_data(label, value, percentile):
+    bar_color = get_color(percentile)
+    st.markdown(
+        f"""
+        <div style="display: flex; align-items: center;">
+            <div style="width: 200px; background-color: lightgray; border-radius: 5px; overflow: hidden;">
+                <div style="width: {percentile}%; background-color: {bar_color}; padding: 5px; text-align: right; color: white; font-weight: bold;">
+                    {int(percentile)}%
+                </div>
+            </div>
+            <div style="margin-left: 10px;"><strong>{label}:</strong> {value} g/mile</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 def emission_search():
     st.title("Search CO2 Emission Ratings")
@@ -33,12 +64,22 @@ def emission_search():
     
     if not filtered_df.empty:
         st.write("### CO2 Emission Ratings")
-        st.write(f"**City CO2 Emissions:** {filtered_df['City CO2 Rounded Adjusted'].values[0]} g/mile")
-        st.write(f"**Highway CO2 Emissions:** {filtered_df['Hwy CO2 Rounded Adjusted'].values[0]} g/mile")
-        st.write(f"**Combined CO2 Emissions:** {filtered_df['Comb CO2 Rounded Adjusted (as shown on FE Label)'].values[0]} g/mile")
+        
+        city_co2 = filtered_df['City CO2 Rounded Adjusted'].values[0]
+        hwy_co2 = filtered_df['Hwy CO2 Rounded Adjusted'].values[0]
+        comb_co2 = filtered_df['Comb CO2 Rounded Adjusted (as shown on FE Label)'].values[0]
+
+        city_percentile = filtered_df['City CO2 Percentile'].values[0]
+        hwy_percentile = filtered_df['Hwy CO2 Percentile'].values[0]
+        comb_percentile = filtered_df['Comb CO2 Percentile'].values[0]
+
+        # Display Color-Coded Emission Data
+        display_emission_data("City CO2 Emissions", city_co2, city_percentile)
+        display_emission_data("Highway CO2 Emissions", hwy_co2, hwy_percentile)
+        display_emission_data("Combined CO2 Emissions", comb_co2, comb_percentile)
+
     else:
         st.write("No data available for the selected car.")
-
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
