@@ -38,7 +38,7 @@ def display_emission_data(label, value, percentile):
         f"""
         <div style="display: flex; align-items: center;">
             <div style="width: 200px; background-color: lightgray; border-radius: 5px; overflow: hidden;">
-                <div style="width: {percentile}%; background-color: {bar_color}; padding: 5px; text-align: right; color: white; font-weight: bold;">
+                <div style="width: {percentile}%; background-color: {bar_color}; padding: 5px; text-align: right; color: black; font-weight: bold;">
                     {int(percentile)}%
                 </div>
             </div>
