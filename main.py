@@ -50,6 +50,16 @@ def display_emission_data(label, value, percentile):
 
 def emission_search():
     st.title("Search CO2 Emission Ratings")
+
+    st.write("In contrast to the previous page, this search engine is not run with Artifical Intelligence. Instead, it directly takes data from a large database provided by the United States Environemntal Protection Agency (EPA).")
+
+    st.write("In this page, you can simply enter a vehicle brand and model and you will recieve a percentile rating of how much carbon dioxide is emitted by the vehicle. The lower the percentile, the better for the environment!")
+
+    st.write("You can use this page to make a greener decision on what vehicle model you would like to buy. For example, if you know you want an Audi but you don't care much about the model, you could use this tool to pick the Audi model with the least percentile rating!")
+
+    st.write("**This page is designed as a supplement to the last, as it doesn't focus on car settings and rather helps you with the first decision: buying the vehicle.**")
+
+    st.write("")
     
     # Select a car brand
     brands = df['Division'].unique()
@@ -57,7 +67,7 @@ def emission_search():
     
     # Filter car models based on brand
     car_models = df[df['Division'] == selected_brand]['Carline'].unique()
-    selected_model = st.selectbox("Select Car Model", car_models)
+    selected_model = st.selectbox("Select Model", car_models)
     
     # Retrieve and display emission data
     filtered_df = df[(df['Division'] == selected_brand) & (df['Carline'] == selected_model)]
@@ -136,7 +146,7 @@ elif section == "Feature Engineering":
     The factor that most overwhelmingly leads to CO2 emissions is of course fuel consuption, but beyond that, 
     ethanol fuel seems to have a very large impact on emissions (12%). Ethanol is tailed by the other fuel types, 
     which have a lower impact on the total CO2 emissions (2-3%). Suprisingly, cylinders and transmission don't make
-    very large impacts, but they are still relevant given the high number of CO2 emissions (g/km). Together, we can make driving more eco-friendly! 🌍
+    very large impacts, but they are still relevant given the high number of CO2 emissions (g/km). Together, we can make driving more eco-friendly!
     """)
 
 
@@ -144,6 +154,11 @@ elif section == "Predict":
     # Prediction Section
     st.title("Predict YOUR Emissions Using AI!")
 
+    st.write("In this section, you can use my deep learning regression model with an r2 score of 0.996 (99th percentile) to see how car settings affect overall carbon emissions. Testing data from the 'Feature Engineering' tab shows that using **ethanol** as your fuel type will heavily **reduce** emissions and increasing **fuel consumption** will obviously **increase** carbon emissions.")
+    
+    st.write("Feel free to play around with values, and you can even input your own values from a recent drive!")
+    
+    st.write("Enter your values below: ")
     # Using a form to group inputs
     with st.form(key="prediction_form"):
         fuel_type_options = ['D', 'E', 'X', 'Z']
