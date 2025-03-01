@@ -58,7 +58,6 @@ def emission_search():
     st.write("You can use this page to make a greener decision on what vehicle model you would like to buy. For example, if you know you want an Audi but you don't care much about the model, you could use this tool to pick the Audi model with the least percentile rating!")
 
     st.write("**This page is designed as a supplement to the last, as it doesn't focus on car settings and rather helps you with the first decision: buying the vehicle.**")
-
     st.write("-------------------------------")
     
     # Select a car brand
@@ -157,7 +156,6 @@ elif section == "Predict":
     st.write("In this section, you can use my deep learning regression model with an r2 score of 0.996 (99th percentile) to see how car settings affect overall carbon emissions. Testing data from the 'Feature Engineering' tab shows that using **ethanol** as your fuel type will heavily **reduce** emissions and increasing **fuel consumption** will obviously **increase** carbon emissions.")
     
     st.write("Feel free to play around with values, and you can even input your own values from a recent drive!")
-    
     st.write("-------------------------------")
 
     st.write("Enter your values below: ")
