@@ -59,7 +59,7 @@ def emission_search():
 
     st.write("**This page is designed as a supplement to the last, as it doesn't focus on car settings and rather helps you with the first decision: buying the vehicle.**")
 
-    st.write("")
+    st.write("-------------------------------")
     
     # Select a car brand
     brands = df['Division'].unique()
@@ -158,6 +158,8 @@ elif section == "Predict":
     
     st.write("Feel free to play around with values, and you can even input your own values from a recent drive!")
     
+    st.write("-------------------------------")
+
     st.write("Enter your values below: ")
     # Using a form to group inputs
     with st.form(key="prediction_form"):
