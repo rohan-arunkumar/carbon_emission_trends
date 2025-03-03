@@ -100,7 +100,7 @@ if section == "Home":
     image = Image.open(img_url)
     st.image(image, caption="Vehicle Pollution")
     st.header("About the Project")
-    st.write("One of the biggest contributers to global warming is the emission of greenhouse gas, which have already tore a hole in the Earth's ozone layer, exposing us to harmful radiation and speeding up the climate clock. Surprisingly, transport accounts for around a quarter of global carbon emissions, wherein vehicles supply three quarters (18.75 percent of total).")
+    st.write("One of the biggest contributers to climate change is the emission of greenhouse gas, which has accelerated global warming and caused increased rates of natural disasters like forest fires, which have affected us greatly in the past few years (LA Fires of 2025, Canadian Wildfires of 2023). Surprisingly, transport accounts for around a quarter of global carbon emissions, wherein vehicles supply three quarters (18.75 percent of total).")
     st.write("Therefore, it is up to us as consumers to be aware of how our choices affect the environment. Using my machine learning model with an R2 score of almost 0.996 on unseen test data, you can see just how much of a difference our consumer choices make.")
     st.write("If you want to check out how car brands and models affect emissions, check out the feature engineering tab and use the data to make a smart, environmentally efficient consumer choice for the Earth!")
 
@@ -119,7 +119,7 @@ elif section == "Feature Engineering":
        - b. Combined (21% of total importance)  
        - c. Highway (15% of total importance)
     2. **Fuel Type**:
-       - a. Ethanol (15% of total importance)  
+       - a. Ethanol (15% of total importance, **reduction in CO2**)  
        - b. Regular Gasoline (3% of total importance)  
        - c. Premium Gasoline (3% of total importance)
        - d. Diesel (2% of total importance)  
@@ -140,12 +140,13 @@ elif section == "Feature Engineering":
     st.image("featureimportance.png", caption="Factors influencing CO2 emissions", use_container_width=True)
     
     # Concluding Message
+    st.write("**Conclusion:**")
     st.markdown("""
     Understanding these factors helps us identify key areas to target for reducing carbon emissions. 
-    The factor that most overwhelmingly leads to CO2 emissions is of course fuel consuption, but beyond that, 
-    ethanol fuel seems to have a very large impact on emissions (12%). Ethanol is tailed by the other fuel types, 
+    The factor that most overwhelmingly leads to CO2 emissions is of course **fuel consumption**, but beyond that, 
+    **ethanol** fuel seems to have a very large impact on emissions (12% **REDUCTION IN CO2**). Ethanol is tailed by the other fuel types, 
     which have a lower impact on the total CO2 emissions (2-3%). Suprisingly, cylinders and transmission don't make
-    very large impacts, but they are still relevant given the high number of CO2 emissions (g/km). Together, we can make driving more eco-friendly!
+    very large impacts, but it is worth noting that **AS8** affects carbon emissions most. Together, we can make driving more eco-friendly!
     """)
 
 
